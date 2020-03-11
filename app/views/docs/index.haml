@@ -1,8 +1,13 @@
-%h1 My Documents
-
-- @docs.each do |doc|
-	%h2= link_to doc.title, doc_path(doc)
-	%p= time_ago_in_words(doc.created_at)
-	%p= truncate(doc.content, length: 50)
-
-= link_to "Create Doc", new_doc_path
+.wrapper-with-padding
+	#docs.clearfix
+		- unless @docs.blank?
+			- @docs.each do |doc|
+				= link_to doc do
+					.doc
+						%p.title= doc.title
+						%p.date= time_ago_in_words(doc.created_at)
+						%p.content= truncate(doc.content, length: 50)
+		- else
+			%h2 Create Doc
+			%p Start creating documents and organizing your life
+			%button= link_to "Create Doc", new_doc_path
