@@ -1,2 +1,18 @@
-%h1 Welcome!
-%p This is a static landing page
+#banner
+	.banner-content
+		%h1 File Storage
+		%p Your life's work. Organized, always.
+		%button= link_to "Enter", new_user_registration_path
+
+#callouts
+	.callout-inner
+		.wrapper
+			.callout
+				%h2 Organize
+				%p Take meeting notes anywhere. Effortlessly organize all your documents in one place. Keep your information private with our secure storage. Find your documents instantly on any device you have, no matter where you are.
+
+#bottom-cta
+	.wrapper
+		%h2 Join today!
+		%br
+		%button= link_to "Register", new_user_registration_path
