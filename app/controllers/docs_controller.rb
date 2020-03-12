@@ -42,6 +42,7 @@ class DocsController < ApplicationController
 	private
 
 		def find_doc
+			@docs = Doc.all
 			@doc = Doc.find(params[:id])
 		end
 
