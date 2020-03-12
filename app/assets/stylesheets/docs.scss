@@ -1,3 +1,93 @@
-// Place all the styles related to the Docs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+#docs {
+	.doc {
+		background: $dark_gray;
+		min-height: 175px;
+		margin: 1rem 1%;
+		padding: 1rem 2.5%;
+		float: left;
+		border-radius: .4rem;
+		position: relative;
+
+		/* Smartphones ----------- */
+		@media screen and (max-width : 768px) {
+			width: 100%;
+		}
+
+		/* iPads (portrait and landscape) ----------- */
+		@media screen and (min-width : 769px) and (max-width : 1024px) {
+		/* Styles */
+			width: 45%;
+		}
+
+		/* Desktops and laptops ----------- */
+		@media screen and (min-width : 1025px) {
+			width: 30%;
+		}
+		.title {
+			@include bold_font;
+			color: $white;
+			margin: 0;
+			letter-spacing: 1px;
+			min-height: 36px;
+		}
+		.content {
+			position: relative;
+		  font-size: 0.9em;
+    	line-height: 1.25em;
+			max-height: 3.75em;
+			text-align: justify;
+			overflow-y: hidden;
+		  margin-right: -1em;
+		  padding-right: 1em;
+			&:before {
+			  content: '...';
+			  position: absolute;
+			  right: 2px;
+			  bottom: 0;
+			}
+			&:after {
+			  content: '';
+			  position: absolute;
+			  right: 0;
+			  width: 1em;
+			  height: 1em;
+			  margin-top: 0.2em;
+			  background: $dark_gray;
+			}
+		}
+		.date {
+			position: absolute;
+			bottom: .25rem;
+			left: 8.5%;
+			color: $green;
+			font-size: .85rem;
+		}
+	}
+}
+
+#doc-show {
+	.title {
+		@include bold_font;
+		font-size: 1.75rem;
+		margin-bottom: 1.25rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid #E9E9E9;
+	}
+	p {
+		font-size: 1rem;
+		line-height: 1.75;
+	}
+	.buttons {
+		margin-top: 3rem;
+		a.button {
+			margin-right: 10px;
+			padding: .5rem 2rem;
+			border-radius: 2rem;
+			text-decoration: none;
+			color: $green;
+			border: 2px solid $green;
+			@include bold_font;
+			background: transparent;
+		}
+	}
+}
